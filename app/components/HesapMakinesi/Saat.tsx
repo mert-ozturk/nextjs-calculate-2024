@@ -36,7 +36,7 @@ const Saat = () => {
      
       <h2>{time.toLocaleDateString()}</h2>
      
-       
+      
     
       </article> 
     

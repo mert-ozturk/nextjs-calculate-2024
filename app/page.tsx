@@ -1,7 +1,9 @@
 import React from 'react'
-import HesapMakinesi from './components/HesapMakinesi/HesapMakinesi'
  
 import Hero from './components/Hero/Hero'
+import WebApi from './components/Api/WebApi'
+ 
+ 
  
 
 const HomePage = () => {
@@ -9,8 +11,9 @@ const HomePage = () => {
 
   return (
     <div>
-   <Hero />
-    <HesapMakinesi />
+       <Hero />
+      <WebApi />
+    
    
     </div>
   )

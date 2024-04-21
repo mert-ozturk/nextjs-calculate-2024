@@ -69,12 +69,11 @@ const onSpace = () => {
  
  
   return (
-    <div className='flex items-center justify-center'>
+    <div className='flex items-center justify-center bg-gray-400'>
   <div  className='flex max-w-sm rounded overflow-hidden shadow-lg  justify-center ' >
   <div className='mt-[0.6rem] text-white p-2 sm:p-4 leading-[2rem] md:text-[15px] lg:text-[15px] text-[17px] xl:text-[20px] justify-center' >
  <div  className="rounded-xl bg-black p-6 text-center shadow-xl custom bg-banner-bg bg-center">
  <input value={shadow }      className="  mb-[0.2rem] outline-none text-gray-200 bg-red-900 rounded-md  "   />
-
   <input value={result }    className=" py-[0.1rem] mb-[0.3rem]   outline-none text-red-900  bg-yellow-300 rounded-md  "  placeholder='0'   />
   <input value={number ||'0'} onChange={onToplam}    className="py-[0.5rem] mb-[0.5rem] outline-none text-white bg-gray-800 rounded-md  " placeholder="0" />
 
