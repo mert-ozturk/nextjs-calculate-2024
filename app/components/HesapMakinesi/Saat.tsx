@@ -31,7 +31,7 @@ const Saat = () => {
     className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
     id="hour"
   ></span>
-  <span>HOURS</span>
+   
 </h3>
      
       <h2>{time.toLocaleDateString()}</h2>
