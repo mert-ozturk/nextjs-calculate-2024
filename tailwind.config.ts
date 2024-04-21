@@ -10,7 +10,9 @@ const config: Config = {
     extend: {
       backgroundImage: {
         'banner-bg':"url('../public/images/calculate.jpg')",
+        'hero-bg':"url('../public/images/webdesign.jpg')",
       },
+      
     },
   },
   plugins: [],

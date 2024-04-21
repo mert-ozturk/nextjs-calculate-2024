@@ -5,110 +5,42 @@ import yaz from '@/public/images/ilkbahar.jpg'
 import Image from 'next/image'
 const Saat = () => {
     const [time,setTime] = useState(new Date())
-    const [currentMonth, setCurrentMonth] = useState('');
-    const [currentSeason, setCurrentSeason] = useState('');
-
-    const mevsim = () => {
-      if(currentSeason === 'ilk bahar' ){
-        return  <Image src={ilkbahar} alt='' width={120} height={120} />
-      }else if (currentSeason === 'Yaz') {
-       return  <Image src={yaz} alt='' width={120} height={120} />
-      }
-    }
-
-    useEffect(() => {
-      const date = new Date();
-      const month = date.getMonth();
   
-      // Ayı belirle
-      let monthName = '';
-      switch (month) {
-        case 0:
-          monthName = 'Ocak';
-          break;
-        case 1:
-          monthName = 'Şubat';
-          break;
-        case 2:
-          monthName = 'Mart';
-          break;
-        case 3:
-          monthName = 'Nisan';
-          break;
-        case 4:
-          monthName = 'Mayıs';
-          break;
-        case 5:
-          monthName = 'Haziran';
-          break;
-        case 6:
-          monthName = 'Temmuz';
-          break;
-        case 7:
-          monthName = 'Ağustos';
-          break;
-        case 8:
-          monthName = 'Eylül';
-          break;
-        case 9:
-          monthName = 'Ekim';
-          break;
-        case 10:
-          monthName = 'Kasım';
-          break;
-        case 11:
-          monthName = 'Aralık';
-          break;
-        default:
-          monthName = '';
-      }
-  
-      // Mevsimi belirle
-      let season = '';
-      switch (month) {
-        case 2:
-        case 3:
-        case 4:
-          season = 'ilk bahar' ;
-          
-          break;
-        case 5:
-        case 6:
-        case 7:
-          season = 'Yaz';
-          break;
-        case 8:
-        case 9:
-        case 10:
-          season = 'Sonbahar';
-          break;
-        default:
-          season = 'Kış';
-      }
-  
-      setCurrentMonth(monthName);
-      setCurrentSeason(season);
-    }, []);
+    useEffect(()=>{
+      const interval = setInterval(()=>{
+          setTime(new Date())
+      },1000)   
+    return () => clearInterval(interval)  
+  },[])
 
     
 
-    useEffect(()=>{
-        const interval = setInterval(()=>{
-            setTime(new Date())
-        },1000)   
-      return () => clearInterval(interval)  
-    },[])
+     
+    
 
+    
   return (
-    <div>
-        <h1>Güncel Ay: {currentMonth}</h1>
-         
-      <h1>Güncel Mevsim:{mevsim()} </h1>
-      
-       <h1>Anlık Saat:</h1>
-      <h2>{time.toLocaleTimeString()}</h2>
+    <main className="flex items-center justify-center container  flex-col lg:flex-row gap-8 lg:gap-10">
+      <article
+    className="relative w-48 h-48 lg:w-56 lg:h-56 xl:w-60 xl:h-60 inline-grid place-content-center text-center border-8 border-[#191919] rounded-full before:rounded-full after:rounded-full after:absolute before:absolute before:-inset-2 pie no-round"
+     
+  >
+    <h3
+      className="font-bold text-base lg:text-lg xl:text-xl flex flex-col gap-1 lg:gap-3"
+    > {time.toLocaleTimeString()}<span
+    className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+    id="hour"
+  ></span>
+  <span>HOURS</span>
+</h3>
+     
       <h2>{time.toLocaleDateString()}</h2>
-    </div>
+     
+       
+    
+      </article> 
+    
+      </main>
   )
 }
 

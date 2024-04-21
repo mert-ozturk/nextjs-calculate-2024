@@ -1,8 +1,8 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import { IoArrowBack } from 'react-icons/io5'
-import ilkbahar from '@/public/ilkbahar.jpg'
-import Image from 'next/image'
+import Saat from './Saat'
+ 
  
 
 const HesapMakinesi = ( ) => {
@@ -38,21 +38,14 @@ const onOperator = (e) => {
 
  const onToplam = () =>{
    try{
-    setNumber(eval(number))
+    setNumber(eval(number.toString()))
     setResult(eval(number))
    } catch {
     setNumber('Error Number')
    }
  }
 
-const onTopla = () => {
-    const operator = ['+']  
-    if( number === '' ){
-    setNumber(number) 
-} else if (operator[0] === '+' ){
-  setNumber(number + operator[0])
-} 
-  } 
+ 
 
  
  
@@ -71,8 +64,9 @@ const onSpace = () => {
  
  
   return (
-  <div  className='block max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700' >
-  <div className='mt-[0.6rem] text-white p-2 sm:p-4 leading-[2rem] md:text-[15px] lg:text-[15px] text-[17px] xl:text-[20px]' >
+    <div className='flex items-center justify-center'>
+  <div  className='flex max-w-sm rounded overflow-hidden shadow-lg  justify-center ' >
+  <div className='mt-[0.6rem] text-white p-2 sm:p-4 leading-[2rem] md:text-[15px] lg:text-[15px] text-[17px] xl:text-[20px] justify-center' >
  <div  className="rounded-xl bg-black p-6 text-center shadow-xl custom bg-banner-bg bg-center">
    
   <input value={result || '0'}   className=" py-[0.1rem] mb-[0.3rem]   outline-none text-red-900  bg-yellow-300 rounded-md  "  placeholder="0"   />
@@ -128,7 +122,7 @@ const onSpace = () => {
 </div> </div>
  
 
-</div> 
+</div> </div>
   
     
     

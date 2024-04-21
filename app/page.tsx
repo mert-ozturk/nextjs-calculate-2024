@@ -1,6 +1,7 @@
 import React from 'react'
 import HesapMakinesi from './components/HesapMakinesi/HesapMakinesi'
-import Saat from './components/HesapMakinesi/Saat'
+ 
+import Hero from './components/Hero/Hero'
  
 
 const HomePage = () => {
@@ -8,9 +9,9 @@ const HomePage = () => {
 
   return (
     <div>
-      <Saat />
+   <Hero />
     <HesapMakinesi />
- 
+   
     </div>
   )
 }
