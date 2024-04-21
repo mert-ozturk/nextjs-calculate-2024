@@ -1,20 +1,22 @@
 'use client'
-import React from 'react'
+import axios from 'axios'
+import React, { useState } from 'react'
 
-export const getData = async () => {
-    const res = await fetch("https://jsonplaceholder.typicode.com/users",{
-        cache:"no-store",
-    });
-    return res.json()
-};
+const WebApi = () => {
+    const [veri,setVeri] = useState({})
+    
+const apiURL = "https://jsonplaceholder.typicode.com/users"
 
-const WebApi = async () => {
-    const data = await getData()
-    console.log(data)
+const fetchData = () => {
+    axios.get(apiURL).then(res=> {
+        setVeri(res.data)
+        console.log(res.data)
+    })
+}
 
   return (
     <div>
-      
+      <button onClick={fetchData}>Getir </button>
     </div>
   )
 }
