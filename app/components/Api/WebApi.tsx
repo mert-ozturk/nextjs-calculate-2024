@@ -1,12 +1,12 @@
 import React from 'react'
 
-const getData = async () => {
+export const getData = async () => {
     const res = await fetch('https://jsonplaceholder.typicode.com/todos/1')
-return res.json()
-
+    return res.json()
+    
 }
 
-
+ 
 
 const WebApi = async () => {
  
@@ -15,7 +15,7 @@ const WebApi = async () => {
 
   return (
     <div>
-      
+      <p className='text-black'>{data.title}</p>
     </div>
   )
 }
