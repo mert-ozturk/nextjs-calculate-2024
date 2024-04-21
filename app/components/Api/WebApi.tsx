@@ -1,14 +1,15 @@
-'use client'
 import React from 'react'
 
-export const getData = async () => {
-    const res = await fetch("https://jsonplaceholder.typicode.com/users",{
-        cache:"no-store",
-    });
-    return res.json()
-};
+const getData = async () => {
+    const res = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+return res.json()
+
+}
+
+
 
 const WebApi = async () => {
+ 
     const data = await getData()
     console.log(data)
 
