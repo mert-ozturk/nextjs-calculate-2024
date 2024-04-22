@@ -11,6 +11,7 @@ const config: Config = {
       backgroundImage: {
         'banner-bg':"url('../public/images/calculate.jpg')",
         'hero-bg':"url('../public/images/webdesign.jpg')",
+        'weather-bg':"url('../public/images/weather.jpg')",
       },
       
     },
