@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const getAllPost = async () => {
-    const res = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+    const res = await fetch('https://jsonplaceholder.typicode.com/posts')
     return res.json()
     
 }
